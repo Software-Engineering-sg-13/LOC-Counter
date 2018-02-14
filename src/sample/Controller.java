@@ -26,8 +26,9 @@ public class Controller implements Initializable{
 
     public void browseBtnAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("C Programmes", "*.c"));
         File selectedFile = fileChooser.showOpenDialog(null);
-
         if(selectedFile != null) {
             addressField.setText(selectedFile.getAbsolutePath());
         } else {
